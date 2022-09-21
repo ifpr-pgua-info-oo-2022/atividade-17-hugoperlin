@@ -39,4 +39,6 @@ public class App extends BaseAppNavigator {
         registraTela("CADASTRO",new ScreenRegistryFXML(App.class, "cadastro.fxml", o->new JanelaCadastro(gerenciador)));
         registraTela("LISTA",new ScreenRegistryFXML(App.class, "lista.fxml", o->new JanelaLista(gerenciador)));
     }
+
+    
 }
