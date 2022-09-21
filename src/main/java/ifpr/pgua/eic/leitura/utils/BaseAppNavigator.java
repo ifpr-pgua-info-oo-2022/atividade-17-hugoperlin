@@ -1,6 +1,7 @@
 package ifpr.pgua.eic.leitura.utils;
 
 
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -31,6 +33,8 @@ public abstract class BaseAppNavigator extends Application{
     private Stage palco;
     private static Map<String,ScreenRegistry> registroTelas = new HashMap<>();
 
+
+
     @Override
     public final void start(Stage primaryStage) throws Exception {
 
@@ -48,9 +52,13 @@ public abstract class BaseAppNavigator extends Application{
         cena = new Scene(root,Region.USE_PREF_SIZE,Region.USE_PREF_SIZE);
         this.palco = primaryStage;
 
+
+        this.palco.getIcons().add(new Image(this.getClass().getResourceAsStream("imgs/logo.png")));
+
         this.palco.setScene(cena);
         this.palco.setTitle(getAppTitle());
         this.palco.show();
+
     }
 
     /**

@@ -29,6 +29,7 @@ public class JanelaPrincipal {
         root.setAlignment(Pos.CENTER);
         root.setPrefSize(400, 600);
 
+
         root.getChildren().addAll(btCadastro,btListar);
     }
 
