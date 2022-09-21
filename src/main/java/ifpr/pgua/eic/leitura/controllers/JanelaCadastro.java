@@ -15,6 +15,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.VBox;
 
 public class JanelaCadastro implements Initializable{
     
@@ -32,6 +33,9 @@ public class JanelaCadastro implements Initializable{
 
     @FXML
     private DatePicker dpData;
+
+    @FXML
+    private VBox root;
 
 
     private GerenciadorLeituras gerenciador;
@@ -54,6 +58,15 @@ public class JanelaCadastro implements Initializable{
         String sNota = tfNota.getText();
 
         double nota = Double.valueOf(sNota);
+
+        //adicionar uma classe de estilo em
+        //tempo de execução
+        if(nota < 0){
+            tfNota.getStyleClass().add("valor-invalido");
+            return;
+        }else{
+            tfNota.getStyleClass().remove("valor-invalido");
+        }
 
         boolean res = gerenciador.cadastraLeitura(titulo, autor, opiniao, data, nota);
         String msg="";

@@ -13,11 +13,12 @@
       xmlns:fx="http://javafx.com/fxml" 
       prefHeight="400" prefWidth="600"
       fx:controller="ifpr.pgua.eic.leitura.controllers.JanelaLista"
+      stylesheets="@./css/estilo.css"
       >
 
       <VBox>
             <ListView fx:id="ltvLeituras" onMouseClicked="#mostrarDetalhes"/>
-            <Button text="Voltar" onAction="#voltar"/>
+            <Button text="Voltar" onAction="#voltar" styleClass="bt-voltar"/>
       </VBox>
       <TextArea fx:id="taDetalhes"/>
 

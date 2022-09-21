@@ -1,0 +1,28 @@
+.text-field{
+    -fx-alignment:center;
+    -fx-background-color:#817e7d;
+    -fx-text-fill:rgb(200,200,200);
+    -fx-border-radius:50;
+    -fx-background-radius:50;
+}
+
+.button{
+    -fx-background-color:blue;
+    -fx-text-fill:rgb(200,200,200);
+}
+
+.root{
+    -fx-background-image:url("../imgs/java.gif");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain
+}
+
+.bt-voltar{
+    -fx-background-color:yellow;
+}
+
+.valor-invalido{
+    -fx-background-color:rgb(203, 103, 103);
+    -fx-border-color:red;
+}
+
