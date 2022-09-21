@@ -15,4 +15,22 @@
       fx:controller="ifpr.pgua.eic.leitura.controllers.JanelaCadastro"
       >
 
+      <Label text="Título"/>
+      <TextField fx:id="tfTitulo"/>
+      <Label text="Autor"/>
+      <TextField fx:id="tfAutor"/>
+      <Label text="Opinião"/>
+      <TextField fx:id="tfOpiniao"/>
+      <Label text="Nota"/>
+      <TextField fx:id="tfNota"/>
+      <Label text="Data da Leitura:"/>
+      <DatePicker fx:id="dpData"/>
+
+      <HBox>
+            <Button text="Cadastar" onAction="#cadastrar"/>
+            <Button text="Voltar" onAction="#voltar"/>
+      </HBox>
+      
+      
+
 </VBox>

@@ -1,6 +1,7 @@
 package ifpr.pgua.eic.leitura.controllers;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import ifpr.pgua.eic.leitura.App;
@@ -11,11 +12,26 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
 public class JanelaCadastro implements Initializable{
     
+    @FXML
+    private TextField tfTitulo;
+
+    @FXML
+    private TextField tfAutor;
+
+    @FXML
+    private TextField tfNota;
+
+    @FXML
+    private TextField tfOpiniao;
+
+    @FXML
+    private DatePicker dpData;
 
 
     private GerenciadorLeituras gerenciador;
@@ -31,11 +47,35 @@ public class JanelaCadastro implements Initializable{
 
     @FXML
     private void cadastrar(ActionEvent evento){
-        
+        String titulo = tfTitulo.getText();
+        String autor = tfAutor.getText();
+        String opiniao = tfOpiniao.getText();
+        LocalDate data = dpData.getValue();
+        String sNota = tfNota.getText();
+
+        double nota = Double.valueOf(sNota);
+
+        boolean res = gerenciador.cadastraLeitura(titulo, autor, opiniao, data, nota);
+        String msg="";
+
+        if(res){
+            msg = "Cadastro realizado!";
+            limpar();
+        }else{
+            msg = "Cadastro não realizado!";
+        }
+
+        Alert alert = new Alert(AlertType.INFORMATION,msg);
+        alert.showAndWait();
     }
 
     @FXML
     private void limpar(){
+        tfTitulo.clear();
+        tfAutor.clear();
+        tfNota.clear();
+        tfOpiniao.clear();
+        dpData.setValue(null);
     }
 
     @FXML

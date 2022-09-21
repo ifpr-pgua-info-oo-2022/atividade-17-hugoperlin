@@ -9,10 +9,17 @@
 <?import javafx.geometry.Insets?>
 
 
-<VBox xmlns="http://javafx.com/javafx" 
+<HBox xmlns="http://javafx.com/javafx" 
       xmlns:fx="http://javafx.com/fxml" 
       prefHeight="400" prefWidth="600"
       fx:controller="ifpr.pgua.eic.leitura.controllers.JanelaLista"
       >
 
-</VBox>
+      <VBox>
+            <ListView fx:id="ltvLeituras" onMouseClicked="#mostrarDetalhes"/>
+            <Button text="Voltar" onAction="#voltar"/>
+      </VBox>
+      <TextArea fx:id="taDetalhes"/>
+
+
+</HBox>
